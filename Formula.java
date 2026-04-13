@@ -10,7 +10,7 @@ public class Formula<T> {
     }
 
     public boolean P(T x, T y) {
-        return x.equals(y);
+        return x != null || y != null;
     }
 
     public boolean S(T y) {
@@ -21,16 +21,14 @@ public class Formula<T> {
         return x != null;
     }
 
-    public boolean forEveryX(){
-        /*TODO: Change Output
-        Default: false
-        */
-        
-        for (T x : universe){
-             if(!thereExistsY(x)){
-                return false:
-            }
+    public boolean forEveryX() {
 
+        for (T x : universe) {
+            System.out.println("Checking x = " + x);
+
+            if (thereExistsY(x) == false) {
+                return false;
+            }
         }
         return true;
 
@@ -39,26 +37,33 @@ public class Formula<T> {
     public boolean thereExistsY(T x) {
 
         for (T y : universe) {
-
             if (implication(x, y)) {
-
-                if (forEveryZ(x, y)) {
-                    return true;
+                if (forEveryZ(x, y) == false) {
+                    return false;
                 }
 
             }
         }
-        return false;
+        return true;
 
     }
 
     public boolean forEveryZ(T x, T y) {
         for (T z : universe) {
-            if (!zCondition(x, y, z)) {
+            if (zCondition(x, y, z) == false) {
+                System.out.println("FAILURE:");
+                System.out.println("x = " + x);
+                System.out.println("y = " + y);
+                System.out.println("z = " + z);
                 return false;
 
             }
+            System.out.println("SUCCESS:");
+            System.out.println("x = " + x);
+            System.out.println("y = " + y);
+            System.out.println("z = " + z);
         }
+
         return true;
     }
 
