@@ -8,9 +8,12 @@ public class Formula <T> {
         return a != null;
     }
 
-    public boolean A(){
+    public boolean A(T a){
+        return false;
         
     }
+
+    //bubbles are real
 
 
 
