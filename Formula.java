@@ -1,24 +1,23 @@
 import java.util.List;
 
-public class Formula<T>{
+public class Formula<T> {
 
     private final List<T> universe;
-    
-    public Formula(List<T> universe){
+
+    public Formula(List<T> universe) {
         this.universe = universe;
 
     }
 
-
-    public  boolean P(T x, T y){
+    public boolean P(T x, T y) {
         return x.equals(y);
     }
 
-    public  boolean S(T y){
+    public boolean S(T y) {
         return y != null;
     }
 
-    public  boolean A(T x){
+    public boolean A(T x) {
         return x != null;
     }
 
@@ -28,33 +27,34 @@ public class Formula<T>{
         */
         
         for (T x : universe){
-             if(!thereExistsY(x))return false;
+             if(!thereExistsY(x)){
+                return false:
+            }
 
         }
         return true;
 
     }
 
-    
-    public boolean thereExistsY(T x){
-        
-        for(T y:universe){
+    public boolean thereExistsY(T x) {
 
-            if (implication(x, y)){
+        for (T y : universe) {
 
+            if (implication(x, y)) {
 
-                 if(forEveryZ(x,y)){
-                    return false;
-                 }
+                if (forEveryZ(x, y)) {
+                    return true;
+                }
 
-            }            
+            }
         }
+        return false;
 
     }
 
     public boolean forEveryZ(T x, T y) {
-        for(T z : universe){
-            if(!zCondition(x,y,z)){
+        for (T z : universe) {
+            if (!zCondition(x, y, z)) {
                 return false;
 
             }
@@ -62,26 +62,19 @@ public class Formula<T>{
         return true;
     }
 
-    public boolean implication(T x,T y){
+    public boolean implication(T x, T y) {
         return P(x, y) && A(x) && S(y);
 
     }
 
-
-
-    public boolean zCondition(T x, T y, T z){
-        return ((P(y,z) && A(x)));
+    public boolean zCondition(T x, T y, T z) {
+        return ((P(y, z) && A(x)));
 
     }
-
-
-    
-
 
     public boolean evaluate() {
-        
+
         return forEveryX();
     }
-
 
 }
