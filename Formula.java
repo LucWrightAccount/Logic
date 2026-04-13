@@ -12,8 +12,11 @@ public class Formula <T> {
         return false;
         
     }
-
-    //bubbles are real
+    
+    public int function(int x, int y){
+        return x*y;
+        
+    }
 
 
 
