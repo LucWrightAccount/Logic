@@ -1,5 +1,9 @@
 import java.util.List;
-
+/*
+**AI Generated**
+Structure Correct
+Qualifiers Correct
+ */
 public class Formula1<T> {
 
     private final List<T> universe;
