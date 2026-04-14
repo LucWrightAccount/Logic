@@ -3,6 +3,7 @@ import java.util.List;
 /*This models the wrong structure.
 The structure currently laid out is bounding "for all x" && "there exists a y" && "for all z" -> Formula
  */
+//Rose was here
 public class Formula<T> {
 
     private final List<T> universe;
