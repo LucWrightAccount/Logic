@@ -20,8 +20,7 @@ Express the formula in terms of a Structure where the ***univers of discourse***
 ### Breakdown
 $\forall$ x : Bound the whole formula including the $\exists$ y 
 
-- $
- \forall$ x ( $\exists$ y P (x,y) $\wedge$ A(x) $\wedge$ S(y)) 
+- $\forall$ x ( $\exists$ y P (x,y) $\wedge$ A(x) $\wedge$ S(y)) 
 
 $\exists$ y : Bound Formula 
 
