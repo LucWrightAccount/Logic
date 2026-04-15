@@ -1,0 +1,9 @@
+# 1. Ignore everything
+*
+# Do not ignore these files
+!forest.pdf
+!prrof.md
+!terms.md
+
+# 4. Do not ignore the .gitignore file itself
+!.gitignore
